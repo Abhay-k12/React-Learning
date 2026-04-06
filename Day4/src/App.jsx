@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 
 export default function App() {
-  let count = 0;
+  let [count, setCount] = useState(0);
+
+  function incrementNumber() {
+    count++;
+    setCount(count);
+  }
+
   return (
     <>
       <p>Counter : {count}</p>
-      <button id="increment">Increment</button>
+      <button onClick={incrementNumber}>Increment</button>
     </>
   )
 }
